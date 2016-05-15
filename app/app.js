@@ -1,1 +1,1 @@
-var app = angular.module("Crowdfire", ['ui.router']);
+var app = angular.module("IMMail", ['ui.router']);
