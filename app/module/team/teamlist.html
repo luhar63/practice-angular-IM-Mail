@@ -1,0 +1,34 @@
+<!--Template for Team Member Listing-->
+<aside class="min-container-height"  id="team-dashboard">
+    <header class="fixed-height-header">
+        <h4>
+            <span class="">Team Members</span>
+            <a href="javascript:void(0)" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+        </h4>
+    </header>
+    <div>
+        <ul class="team-list list-group">
+            <li class="list-group-item noPadding call-panel" ng-class="{'expand':showCallPanel}">
+                <div class="end-call">
+                    <a ng-click="endCallFn()" title="End Call"><span class="glyphicon glyphicon-phone-alt"></span></a>
+                </div>
+                <div class="member-name">
+                    <span ng-bind="team.memberCalled.name"></span>
+                    <span>00:00</span>
+                </div>
+            </li>
+            <li class="list-group-item noPadding" ng-repeat = "member in team.allMembers">
+                <a class="row member" ng-class="{'active':member.id === team.selectedMemberId}" ng-click="changeSelectedMember(member.id)" title="member.name">
+                    <div class="member-pic">
+                        <figure class="img-circle">
+                            <img ng-src="{{member.profilepic}}" alt="member.name" />
+                        </figure>
+                    </div>
+                    <div class="member-name">
+                        <span ng-bind="member.name"></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

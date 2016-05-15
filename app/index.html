@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" itemscope itemtype="http://schema.org/Organization" lang='en-US' xml:lang='en-US' xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>Crowdfire</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+</head>
+
+<body ng-app="Crowdfire">
+    <div ui-view></div>
+    
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/main.js -->
+    <!-- injector:js -->
+    <script src="/app.js"></script>
+    <script src="/states.js"></script>
+    <script src="/module/dashboard/dashboardController.js"></script>
+    <script src="/module/team/teamController.js"></script>
+    <script src="/module/common/service/teamListModel.js"></script>
+    <script src="/module/common/service/teamListService.js"></script>
+    <script src="/module/common/service/messageListModel.js"></script>
+    <script src="/module/common/service/messageListService.js"></script>
+    <script src="/module/common/service/utilService.js"></script>
+    <script src="/module/common/service/callService.js"></script>
+    <script src="/module/common/directive/fade.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+</body>
+
+</html>

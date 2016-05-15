@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 14px;
+    color: #526b8c;
+}
+a,a:hover,a:focus,a:active{
+    color: #526b8c;
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+.glyphicon{
+    color: #6989a5;
+}
+.cssfadeOut{
+    opacity: 0;
+}
+.cssfadeIn{
+    opacity: 1;
+}
+.noPadding{
+    padding: 0;
+}
+.noMargin{
+    margin: 0;
+}
+#crowdfire{
+    margin: 2% auto;
+    max-width: 800px;
+    position: relative;
+}
+.min-container-height{
+    min-height: 540px;
+    max-height: 540px;
+    overflow: auto;
+}
+.dashboard-container{
+    display: block;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+.dashboard-container>div{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.dashboard-container main{
+    position: relative;
+}
+.fixed-height-header{
+    height: 60px;
+}
+.full-height{
+    height: 100%;
+    display: inline-block;
+}
+.img-circle{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    margin: 0 auto;
+}
+.member-pic{
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    float: left;
+}
+.bold-font{
+     font-weight: bold;
+}
+.callingboard-color{
+     color:#89bde3;
+}
+.blur-background{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background: url(/img/pic1.jpg) no-repeat;
+    background-size: 100% 100%;
+    -webkit-filter:blur(2px);
+    filter:blur(2px);
+    
+}
+.img-container{
+    display: table;
+    width: 60%;
+    margin: 0 auto;
+}
+.msg-time{
+    font-size: 0.78em;
+    font-weight: normal;
+}
+.team-list img,.message-list img{
+    width: 44px;
+    height: 44px;
+}

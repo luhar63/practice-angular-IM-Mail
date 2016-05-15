@@ -1,0 +1,112 @@
+<!--Template for Message and Profile Panel View-->
+<main>
+    <!--Message Section-->
+    <section id="message-dashboard" class="min-container-height">
+        <header class="fixed-height-header">
+            <h4 class="col-sm-6 noPadding">
+                <span class="selectedName" ng-bind="dashboard.member.name"></span>
+            </h4>
+            <nav class="col-sm-6 full-height noPadding">
+                <ul class="list-inline full-height pull-right">
+                    <li class="full-height">
+                        <a href="javascript:void(0)" ng-click="showProfileFn()" title="Profile">
+                            <span class="glyphicon glyphicon-user">
+                        </a>
+                    </li>
+                    <li class="full-height">
+                        <a href="javascript:void(0)" ng-click="showProfileFn()" title="Call">
+                            <span class="glyphicon glyphicon-earphone">
+                        </a>
+                    </li>
+                    <li class="full-height">
+                        <a href="javascript:void(0)" ng-click="showProfileFn()" title="Message">
+                            <span class="glyphicon glyphicon-envelope">
+                        </a>
+                    </li>
+                </ul>
+            </nav>   
+        </header>
+        <div class="message-body">
+            <ul class="message-list list-group">
+                <li class="list-group-item noPadding" ng-repeat="message in dashboard.messages">
+                    <a class="row">
+                        <div class="member-pic">
+                            <figure class="img-circle">
+                                <img ng-src="{{message.fromPic}}" alt="{{message.from}}" title="{{message.from}}"/>
+                            </figure>
+                        </div>
+                        <div class="message">
+                            <div class="from-name">
+                                <span ng-bind="message.from"></span>
+                                <span class="msg-time pull-right" ng-bind="message.time"></span>
+                            </div>
+                                <p ng-bind="message.message" class="noMargin"></p>
+                        </div>
+                    </a>
+                </li>
+            </ul> 
+            <div id="message-text-area">
+                <textarea>Type a message</textarea>
+            </div>
+        </div>
+    </section>
+    <!--Profile Section / Calling Section-->
+    <section id="profile-dashboard" class="min-container-height" ng-class="{'show-with-fade':dashboard.showProfile,'calling':dashboard.calling.callingMode}">
+        <figure class="blur-background" ng-style="{'background-image': 'url(' + dashboard.member.profilepic + ')'}"></figure>
+        <div>
+            <header>
+                <a ng-click="closeProfileFn()" ng-class="{'cssfadeOut': dashboard.calling.callingMode}" title="Back">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="">Back</span>
+                </a>
+            </header>
+            <div id="profile">
+                <div class="call-timer text-center" ng-class="{'expand': dashboard.calling.callingMode}" ng-bind="dashboard.callingText"></div>
+                <div class="img-container text-center">
+                    <figure class="profile-message" cfade-out="dashboard.calling.callingMode">
+                        <a href="javascript:void(0)" ng-click="closeProfileFn()" title="Message">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </a>
+                    </figure>
+                    <div class="profile-pic">
+                        <figure class="img-circle">
+                            <img ng-src="{{dashboard.member.profilepic}}" title="{{dashboard.member.name}}" alt="{{dashboard.member.name}}" />
+                        </figure>
+                    </div>
+                    <figure class="profile-call" cfade-out="dashboard.calling.callingMode">
+                        <a href="javascript:void(0)" ng-click="startCallingFn()" title="Call">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                        </a>
+                     </figure>
+                </div>
+                <div class="detail-container text-center">
+                    <h5 ng-bind="dashboard.member.name"></h5>
+                    <!--Bootstrap Progress Bar-->
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70"aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            <span class="sr-only">70% Complete</span>
+                        </div>
+                    </div>
+                    <div>898/1600</div>
+                    <div ng-bind="dashboard.member.designation"></div>
+                    <span ng-bind="dashboard.member.email" class="callingboard-color bold-font"></span>
+                </div>
+                <div class="call-buttons text-center" cfade-In="dashboard.calling.callingMode" ng-class="{'connected':dashboard.onGoingCall&&dashboard.calling.callingMode}">
+                    <figure class="mute" ng-init="dashboard.mute = true">
+                         <a href="javascript:void(0)" title="Mute" ng-if="!dashboard.mute" ng-click="toggleMute()">
+                            <span class="glyphicon glyphicon-volume-off"></span>
+                         </a>
+                         <a href="javascript:void(0)" title="Unmute" ng-if="dashboard.mute" ng-click="toggleMute()">
+                            <span class="glyphicon glyphicon-volume-up"></span>
+                         </a>
+                    </figure>
+                    <figure class="end">
+                        <a href="javascript:void(0)" class="drop-call" title="Drop Call" ng-click="dropCall()">
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                        </a>
+                     </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

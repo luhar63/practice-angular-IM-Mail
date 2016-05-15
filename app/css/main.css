@@ -1,0 +1,297 @@
+/*CSS For Message, Profile Panel and Team Panel*/
+#profile-dashboard,#message-dashboard{
+    position: absolute;
+    width: 100%;
+}
+
+#message-dashboard,#team-dashboard{
+    background: #fff;
+}
+
+#team-dashboard header,#message-dashboard header{
+    padding: 10px;
+    background: #dfe5ee;
+    border-bottom: 1px solid #ceced6;
+}
+#team-dashboard header h4,#message-dashboard header h4{
+    font-weight: bold;
+}
+#team-dashboard .team-list,#message-dashboard .message-list{
+    border: none;
+    border-radius: 0;
+    overflow: auto;
+}
+#team-dashboard .team-list li,#message-dashboard .message-list li{
+    border-radius: 0;
+    border: none;
+}
+#team-dashboard .team-list li .member, #message-dashboard .message-list li a{
+    display: block;
+    margin: 0;
+    padding: 3%;
+    height: 65px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #efe9ef;
+
+}
+
+/*CSS For Message Panel*/
+#message-dashboard{
+    border-right: 1px solid #ceced6;
+}
+#message-dashboard header{
+    overflow: hidden;
+    padding: 0;
+}
+#message-dashboard header h4{
+    padding: 10px 10px 10px 20px;
+}
+
+#message-dashboard nav ul{
+    margin-bottom: 0;
+}
+#message-dashboard nav li{
+        margin-left: -5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#message-dashboard nav li a{
+    padding: 2rem 2.3rem;
+    border-left: 1px solid #ceced6;
+    display: block;
+}
+#message-dashboard nav li a:focus{
+    background: #eff7f7;
+}
+#message-dashboard .message-list{
+    padding-bottom: 80px;
+    margin-bottom: 0;
+}
+#message-dashboard .message-list li a{
+    padding: 10px;
+    height:80px;
+    overflow: hidden;
+}
+#message-dashboard .message{
+    display: block;
+    float: left;
+    padding-left: 3%;
+    width: calc( 100% - 50px );
+}
+#message-dashboard .message .from-name{
+    font-weight: bold;
+}
+#message-text-area{
+    padding: 15px;
+    border-top: 1px solid #efe9ef;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#message-text-area textarea{
+    width: 100%;
+    text-align: left;
+    line-height: 38px;
+    padding-left:10px; 
+    height: 40px;
+    resize: none;
+    border: 1px solid #efe9ef;
+}
+
+/*CSS for Team Member Aside Panel*/
+
+#team-dashboard .team-list li .member{
+    border-left: 3px solid #fff;
+}
+#team-dashboard header .glyphicon{
+    font-size: 0.8em;
+}
+#team-dashboard .call-panel .member-name{
+    width: calc(100% - 60px);
+}
+#team-dashboard .call-panel .member-name span{
+    color: #fff;
+}
+
+#team-dashboard .team-list li a.active{
+    background: #e6e9f1;
+    border-left: 3px solid #2e75a8;
+}
+#team-dashboard .member-name{
+    display: table;
+    height: 100%;
+    width: calc( 100% - 50px );
+}
+#team-dashboard .member-name span{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/*CSS For Profile Panel*/
+#profile-dashboard{
+    opacity: 0;
+    z-index: -1;
+    transition:opacity 0.5s ease-in;
+}
+
+#profile-dashboard.show-with-fade{
+    z-index: 1;
+    opacity: 1;
+}
+#profile-dashboard a,#profile-dashboard .glyphicon{
+    color: #fff;
+}
+#profile-dashboard .blur-background{
+    background: url(/img/pic2.jpg) no-repeat;
+    background-size: 100% 100%;
+    filter:blur(0px);
+    -webkit-filter:blur(0px);
+}
+#profile-dashboard .blur-background:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4294ce;
+    opacity: 0.8;  
+}
+#profile-dashboard header{
+    padding: 15px;
+    margin-bottom: 5%;
+}
+#profile-dashboard>div{
+    z-index: 1;
+    position: relative;
+    color: #fff;
+}
+
+.profile-message,.profile-call,.profile-pic{
+    display: table-cell;
+}
+
+.profile-pic .img-circle{
+     width: 135px;
+     height: 135px;
+}
+.profile-message a, .profile-call a{
+    display: inline-block; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.profile-message span,.profile-call span, .mute span, .end span{
+    padding: 10px;
+    font-size: 1.4em;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #2e75a8;
+     -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+.profile-message a:focus span,.profile-call a:focus span{
+    background: #5f92ba;
+    
+}
+.profile-pic img{
+    width: 135px;
+    height: 135px;
+}
+.call-panel{
+    height: 0;
+    background: #4294ce;
+     overflow: hidden;
+     
+    transition:height 0.5s ease;
+}
+.call-panel .end-call{
+    width: 60px;
+    float: left;
+}
+.call-panel .end-call a{
+    height: 44px;
+    width: 44px;
+    display: inline-block;
+    line-height: 40px;
+    margin: 8px;
+    margin-left: 10px;
+    text-align: center;
+    background: #b04d39;
+     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+
+}
+.call-panel .end-call a span{
+     color: #fff;
+}
+.call-panel.expand{
+    height: 60px;
+   
+}
+
+
+.progress{
+    height: 10px;
+    width: 30%;
+    margin: 5px auto;
+}
+.progress-bar{
+    border-radius: 4px;
+}
+
+.call-timer{
+    height: 0;
+    font-size: 1.2em;
+    line-height: 80px;
+    font-weight: bold;
+    overflow: hidden;
+    transition:height 0.5s ease;
+}
+
+.call-timer.expand{
+    height: 80px;
+    
+}
+.drop-call span{
+    background: #b04d39;
+}
+.call-buttons{
+    overflow: hidden;
+    padding: 1em;
+}
+.call-buttons .mute,.call-buttons .end{
+    display: inline-block;
+   transition:transform 0.5s ease;
+   -webkit-transition:-webkit-transform 0.5s ease;
+}
+.call-buttons .mute{
+    -ms-transform: translateX(55%);
+    -webkit-transform: translateX(55%);
+    -moz-transform: translateX(55%);
+    -o-transform: translateX(55%);
+    transform: translateX(55%);
+}
+.call-buttons .end{
+    -ms-transform: translateX(-55%);
+    -webkit-transform: translateX(-55%);
+    -moz-transform: translateX(-55%);
+    -o-transform: translateX(-55%);
+    transform: translateX(-55%);
+}
+.connected.call-buttons .end{
+    -ms-transform:  translateX(55%);
+    -webkit-transform:  translateX(55%);
+    -moz-transform:  translateX(55%);
+    -o-transform:  translateX(55%);
+    transform:  translateX(55%);
+}
+.connected.call-buttons .mute{
+    -ms-transform:  translateX(-55%);
+    -webkit-transform:translateX(-55%);
+    -moz-transform:  translateX(-55%);
+    -o-transform:  translateX(-55%);
+    transform: translateX(-55%);
+}
+
